@@ -12,7 +12,14 @@ for line in data:
     firewalls.append(Firewall(depth, f_range, period))
 
 offset = 0
-while sum((f.depth + offset) % f.period == 0 for f in firewalls) > 0:
+while True:
+    caught = False
+    for f in firewalls:
+        caught = (f.depth + offset) % f.period == 0
+        if caught:
+            break
+    if not caught:
+        break
     offset += 1
 
 print(offset)
