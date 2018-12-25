@@ -1,5 +1,3 @@
-from collections import namedtuple
-
 class Firewall():
     def __init__(self, f_range):
         self.f_range = f_range
