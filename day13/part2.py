@@ -1,5 +1,4 @@
 from collections import namedtuple
-from copy import deepcopy
 
 Firewall = namedtuple('Firewall', ['depth', 'f_range', 'period'])
 
