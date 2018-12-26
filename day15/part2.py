@@ -10,14 +10,15 @@ div = 2**31 - 1
 judge_As = []
 judge_Bs = []
 N = 5000000
-step = 0
 
-while len(judge_As) < N or len(judge_Bs) < N:
+while len(judge_As) < N:
     A = (A * A_mul) % div
-    B = (B * B_mul) % div
-    if A % 4 == 0 and len(judge_As) < N:
+    if A % 4 == 0:
         judge_As.append(A & lower_16)
-    if B % 8 == 0 and len(judge_Bs) < N:
+
+while len(judge_Bs) < N:
+    B = (B * B_mul) % div
+    if B % 8 == 0:
         judge_Bs.append(B & lower_16)
 
 print(np.sum(np.array(judge_As) == np.array(judge_Bs)))
