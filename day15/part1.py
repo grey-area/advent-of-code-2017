@@ -1,5 +1,3 @@
-import numpy as np
-
 lower_16 = 0xffff
 A = 699
 B = 124
