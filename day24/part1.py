@@ -9,7 +9,7 @@ def search(search_value, ports, strengths, acc=[]):
         elif port.right == search_value:
             search(port.left, ports[:port_i] + ports[port_i + 1:], strengths, acc + [port.left + port.right])
 
-        strengths.append(sum(acc))
+    strengths.append(sum(acc))
 
 with open('input') as f:
     data = f.read().splitlines()
