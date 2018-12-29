@@ -1,10 +1,12 @@
-from collections import deque
-
-state = deque([0])
+state_length = 1
+value_after_0 = 0
+index = 0
 step = 303
 
 for value in range(1, 50000000, 1):
-    state.rotate(-(step + 1))
-    state.appendleft(value)
+    index = (index + step) % state_length + 1
+    state_length += 1
+    if index == 1:
+        value_after_0 = value
 
-print(state[state.index(0) + 1])
+print(value_after_0)
