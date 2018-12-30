@@ -60,7 +60,8 @@ if __name__ == '__main__':
                      [False, False, True],
                      [True, True, True]], dtype=np.bool)
 
-    for i in range(5):
+    for i in range(1, 19, 1):
         grid = update(grid, rules)
 
-    print(np.sum(grid))
+        if i in [5, 18]:
+            print(f'After {i} iterations, {np.sum(grid)} cells are on.')
